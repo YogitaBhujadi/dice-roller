@@ -4,10 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller
-        
+
     </title>
 </head>
+<style>
+
+    .container{
+        width: 400px;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: block;
+        margin: 30px auto;
+    }
+
+    .img-dice{
+        width: 200px;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .btn-roll{
+        display: block;
+        margin: 20px auto;
+        font-size: 20px;
+        padding: 10px 40px;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 30px;
+
+    }
+
+    .heading{
+        text-align: center;
+    }
+
+</style>
 <body>
+    <div class="container">
+    <h1 class="heading">Dice Roller</h1>
+
+    <img src="one.png" alt=""  class="img-dice"  id="img-dice">
+
+    <button type="button" class="btn-roll" onclick="rollDice()">
+        Roll dice</button>
+
+    </div>
+
+    <script>
+        function rollDice(){
+            const min = 1;
+            const max = 6;
+            const randomNum = Math.round(Math.random() * (max-min)) + min;
+
+            const diceImg = document.getElementById('img-dice');
+
+            if(randomNum==1){
+                diceImg.src = 'one.png';
+            }
+            else if(randomNum==2){
+                diceImg.src = 'two.png';
+            }
+            else if(randomNum==3){
+                diceImg.src = 'three.png';
+            }
+            else if(randomNum==4){
+                diceImg.src = 'four.png';
+            }
+            else if(randomNum==5){
+                diceImg.src = 'five.png';
+            }
+            else if(randomNum==6){
+                diceImg.src = 'six.png';
+            }
+        }
+    </script>
     
 </body>
 </html>
